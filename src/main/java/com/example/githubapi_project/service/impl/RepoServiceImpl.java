@@ -23,7 +23,6 @@ public class RepoServiceImpl implements RepoService {
     Map<String, GHRepository> repositoryMap = user.getRepositories();
 
     return repositoryMap.values().stream().toList();
-
   }
 
   @Override

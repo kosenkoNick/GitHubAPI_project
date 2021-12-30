@@ -24,6 +24,7 @@ public class GitHubController {
   @GetMapping("/github/{username}")
   protected Map<String, Set<String>> getUserData(@PathVariable("username") String username)
       throws IOException {
+//    TODO validate username
     GitHub github = GitHub.connectAnonymously();
     Map<String, Set<String>> resultMap = new HashMap<>();
     Collection<GHRepository> repositoryList = repoService.getUserRepos(github, username);
@@ -37,6 +38,5 @@ public class GitHubController {
         }
     );
     return resultMap;
-
   }
 }
